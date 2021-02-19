@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background: #f1f3f8;
+    background: #ffffff;
+}
+
+.main.active {
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+/* Title */
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 3%;
+}
+
+.title h2 {
+    font-family: 'Reggae One', sans-serif;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 1px #1c1d1e;
+}
+
+.title h2 span {
+    color: #7049f0;
+    /* color:#f3542a; */
+}
+
+.search {
+    margin-top: 8%;
+    margin-bottom: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input {
+    padding: 1em 1em 1em 1.3em;
+    width: 70%;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    background: #f1f3f8;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search input::placeholder {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: .9rem;
+}
+
+.categories {
+    position: absolute;
+    top: 10%;
+    left: 90%;
+
+}
+
+
+/* GIF's Container */
+.gifs-container {
+    margin: 5%;
+    column-count: 3;
+}
+
+.gifs-container>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container>div {
+    margin-bottom: 10%;
+}
+
+/* Image Styling */
+img {
+    height: auto;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/* Button */
+button {
+    padding: 1em 2em 1em 2em;
+    outline: none;
+    background: rgb(36, 108, 202);
+    border: none;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px #1c1d1e;
+    border-radius: 5px;
+}
+
+button:hover {
+    transition: all .2s;
+    background: rgb(23, 66, 122);
+}
+
+
+/* Trending Button */
+.trending,
+.categories {
+    position: fixed;
+    top: 15%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.trending input[type="button"],
+.random input[type="button"] {
+    padding: 1em;
+    border: none;
+    outline: none;
+    display: block;
+    height: 70px;
+    width: 70px;
+    background: #f3542a;
+    border-radius: 100%;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px #1d1c1e;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.trending input[type="button"]:hover {
+    background: #c51b1b;
+}
+
+
+/* Category */
+.categories {
+    top: 90%;
+    left: 90%;
+}
+
+.categories.active {
+    display: none;
+}
+
+.categories select {
+    padding: 1em 2em 1em 2em;
+    font-family: 'Poppins', cursive;
+    background: #7049f0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #1d1c1e;
+    letter-spacing: 2px;
+}
+
+/* Random Button */
+.random {
+    position: fixed;
+    top: 90%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.random input[type="button"] {
+    background: #7049f0;
+    transition: .2s;
+}
+
+.random input[type="button"]:hover {
+    background: #492f9c;
+}
+
+
+/* Random GIF */
+.randomGIF #randomimage {
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    transform: translateY(-50%, -50%);
+    display: none;
+    height: 300px;
+    width: 300px;
+    z-index: 1;
+}
+
+.randomGIF #randomimage.active {
+    display: block;
+}
+
+/* Newly added ! */
+@media (max-width:1109px) {
+    .categories {
+        left: 50%;
+    }
+}
+
+
+@media (max-width:639px) {
+    .gifs-container {
+        column-count: 2;
+    }
+
+    .trending {
+        top: 8%;
+    }
+
+    .random {
+        top: 90%;
+    }
+
+    .trending input[type="button"],
+    .random input[type="button"] {
+        height: 50px;
+        width: 50px;
+        font-size: .9rem;
+    }
+
+    .categories {
+        left: 50%;
+    }
+
+    .search input {
+        max-width: 100%;
+    }
+
+    .randomGIF #randomimage {
+        /* margin: 3%; */
+        top: 10%;
+        left: 8%;
+        transform: translateY(-50%, -50%);
+        height: auto;
+        max-width: 100%;
+    }
+
+    .title h2 {
+        font-family: .5rem;
+    }
+}
